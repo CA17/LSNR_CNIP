@@ -1,12 +1,12 @@
 	#--------------------------------------------------------------------->
-	# CNIP Route Rule # 2018/01/01
+	# CNIP Route Rule # 2018/03/01
 	#--------------------------------------------------------------------->
 	:global 189
 	:set 189 [/ip address get value-name=network [find interface=bridge_LAN] ]
 	:set 189 [:pick $189 3 6]
 
-	/ip route rule {
-	remove [find comment~"CNIP"];
+/ip route rule remove [find comment~"CNIP"];
+/ip route rule {
 	add dst-address=1.0.1.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=1.0.2.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=1.0.8.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -174,6 +174,7 @@
 	add dst-address=39.96.0.0/13 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=39.104.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=39.108.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=39.109.120.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=39.128.0.0/10 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=40.0.176.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=40.0.247.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -305,7 +306,6 @@
 	add dst-address=43.225.84.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=43.225.120.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=43.225.180.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=43.225.184.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=43.225.208.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=43.225.216.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=43.225.224.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -781,11 +781,19 @@
 	add dst-address=49.4.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.51.56.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.51.60.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=49.51.64.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.64.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.72.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.76.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.110.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.112.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.51.150.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.51.152.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=49.51.160.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=49.51.192.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.160.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.176.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.192.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.224.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.236.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=49.51.240.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.52.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.64.0.0/11 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.112.0.0/13 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -801,6 +809,8 @@
 	add dst-address=49.239.0.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=49.239.192.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=52.80.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=52.82.176.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=52.82.184.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=52.82.187.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=52.82.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=52.82.192.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -849,16 +859,7 @@
 	add dst-address=59.83.0.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.83.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.107.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.108.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.110.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.0.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.128.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.192.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.224.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.240.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.248.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.252.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.111.255.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=59.108.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.151.0.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.152.16.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.152.36.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -869,7 +870,6 @@
 	add dst-address=59.153.64.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.153.72.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.153.92.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=59.153.116.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.153.136.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.153.152.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=59.153.164.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -979,7 +979,16 @@
 	add dst-address=101.128.32.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.129.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.130.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=101.132.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.132.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.0.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.128.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.160.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.176.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.184.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.189.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.190.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.134.192.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.135.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.144.0.0/12 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.192.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.196.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1010,10 +1019,7 @@
 	add dst-address=101.251.8.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.251.16.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.251.32.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=101.251.64.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=101.251.96.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=101.251.116.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=101.251.120.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=101.251.64.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.251.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.252.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=101.254.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1506,7 +1512,7 @@
 	add dst-address=103.71.88.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.71.120.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.71.128.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.71.144.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.71.146.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.71.196.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.71.200.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.71.232.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1636,6 +1642,7 @@
 	add dst-address=103.86.32.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.86.60.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.86.91.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.86.129.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.86.204.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.86.208.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.86.224.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1735,16 +1742,10 @@
 	add dst-address=103.96.192.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.96.208.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.96.216.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.97.8.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.97.17.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.97.18.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.97.20.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.97.24.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.36.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.40.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.56.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.60.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.97.64.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.72.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.112.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.97.128.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1812,9 +1813,7 @@
 	add dst-address=103.103.12.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.103.16.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.103.36.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.103.68.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.103.72.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.103.178.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.103.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.103.200.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.104.0.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1830,9 +1829,10 @@
 	add dst-address=103.105.12.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.105.16.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.105.23.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.105.56.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.105.60.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.105.116.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=103.105.132.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.105.133.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.105.134.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.105.180.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.105.184.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.105.200.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -1845,6 +1845,48 @@
 	add dst-address=103.106.120.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.106.128.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.106.160.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.106.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.106.196.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.106.202.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.106.212.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.106.252.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.0.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.28.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.32.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.44.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.72.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.108.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.164.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.168.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.192.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.107.208.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.52.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.64.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.160.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.184.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.188.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.192.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.208.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.224.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.244.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.108.251.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.109.20.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.109.48.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.109.88.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.109.106.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.109.248.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.32.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.92.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.100.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.116.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.127.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.128.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.131.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.132.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.136.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.152.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=103.110.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.192.0.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.192.48.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=103.192.56.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -2801,24 +2843,18 @@
 	add dst-address=118.184.5.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.8.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.10.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.184.105.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.184.106.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=118.184.107.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.108.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.110.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.184.112.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=118.184.112.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=118.184.120.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=118.184.122.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=118.184.124.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.128.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.192.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.208.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.184.240.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.186.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.0.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.16.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.24.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.27.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.28.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.32.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.64.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=118.187.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=118.186.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.188.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.190.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=118.191.0.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3007,14 +3043,7 @@
 	add dst-address=121.101.208.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=121.192.0.0/13 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=121.200.192.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.0.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.64.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.80.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.88.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.92.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.94.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.96.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=121.201.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=121.201.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=121.204.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=121.224.0.0/12 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=121.248.0.0/14 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3032,6 +3061,7 @@
 	add dst-address=122.8.80.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=122.8.86.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=122.8.88.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=122.8.91.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=122.8.92.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=122.8.96.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=122.8.100.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3245,6 +3275,7 @@
 	add dst-address=125.254.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=128.108.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=129.28.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=129.204.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=129.223.254.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=131.228.96.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=132.232.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3369,7 +3400,9 @@
 	add dst-address=146.222.94.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=148.70.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=150.0.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=150.109.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=150.109.32.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=150.109.64.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=150.109.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=150.115.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=150.121.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=150.122.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3401,6 +3434,7 @@
 	add dst-address=150.242.248.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=150.255.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=152.104.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=152.136.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=153.0.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=153.3.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=153.34.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3433,6 +3467,7 @@
 	add dst-address=157.148.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=157.156.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=157.255.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=159.75.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=159.153.120.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=159.226.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=160.19.208.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3455,6 +3490,7 @@
 	add dst-address=161.163.178.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=161.163.180.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=161.207.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=162.14.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=162.62.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=162.105.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=163.0.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3472,8 +3508,7 @@
 	add dst-address=163.53.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=163.53.220.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=163.53.236.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=163.53.240.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=163.53.242.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=163.53.240.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=163.125.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=163.142.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=163.177.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3561,6 +3596,7 @@
 	add dst-address=180.148.216.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=180.148.224.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=180.149.128.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=180.150.160.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=180.150.176.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=180.152.0.0/13 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=180.160.0.0/12 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3633,6 +3669,7 @@
 	add dst-address=183.184.0.0/13 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=183.192.0.0/10 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=185.109.236.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=185.247.180.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=188.131.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=192.11.23.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=192.11.26.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -3656,7 +3693,6 @@
 	add dst-address=192.140.208.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=192.144.128.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=192.163.11.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=192.200.24.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=192.232.97.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=193.20.64.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=193.112.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -4015,7 +4051,6 @@
 	add dst-address=202.143.56.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=202.143.100.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=202.143.104.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=202.144.199.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=202.146.160.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=202.146.186.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=202.146.188.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -4908,7 +4943,7 @@
 	add dst-address=203.80.57.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.80.129.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.80.132.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=203.80.138.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=203.80.139.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.80.140.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.80.144.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.81.0.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -4955,7 +4990,8 @@
 	add dst-address=203.99.80.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.100.32.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.100.50.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=203.100.52.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=203.100.52.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=203.100.55.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.100.58.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.100.60.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=203.100.63.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -5243,10 +5279,11 @@
 	add dst-address=220.234.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.0.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.6.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=220.242.8.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=220.242.10.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.12.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.14.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=220.242.16.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=220.242.17.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=220.242.18.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.20.0/24 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.26.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=220.242.28.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -5342,14 +5379,7 @@
 	add dst-address=223.192.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=223.198.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=223.201.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.0.0/17 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.128.0/18 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.192.0/19 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.224.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.240.0/21 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.248.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.202.252.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
-	add dst-address=223.203.0.0/16 src-address="10.$189.0.0/16" table=main comment=CNIP;
+	add dst-address=223.202.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=223.208.0.0/13 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=223.220.0.0/15 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=223.223.176.0/20 src-address="10.$189.0.0/16" table=main comment=CNIP;
@@ -5363,5 +5393,5 @@
 	add dst-address=223.255.236.0/22 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=223.255.252.0/23 src-address="10.$189.0.0/16" table=main comment=CNIP;
 	add dst-address=0.0.0.0/0 src-address="10.$189.0.0/16" table=CN2_Routing comment=CNIP;
-	add dst-address=0.0.0.0/0 src-address="10.$189.0.0/16" table=CN2_Routing comment=CNIP;
-				}
+	}
+:log info "CNIP scripts are imported successfully"
